@@ -1,6 +1,6 @@
 import Heading from "../ui/Heading";
 import Row from "../ui/Row";
-
+//Bookings
 function Bookings() {
   return (
     <Row type="horizontal">
