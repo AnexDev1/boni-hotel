@@ -9,3 +9,12 @@ export async function getCabins() {
 
   return data;
 }
+
+export async function deleteCabin(id) {
+  const { data, error } = await supabase.from("cabins").delete().eq("id", id);
+  if (error) {
+    console.error("cabins could not be deleted");
+    throw new Error("could not delete cabin");
+  }
+  return data;
+}
