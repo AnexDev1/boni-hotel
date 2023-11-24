@@ -144,7 +144,9 @@ function CreateCabinForm() {
         <Button variation="secondary" type="reset">
           Cancel
         </Button>
-        <Button disabled={isCreating}>Add cabin</Button>
+        <Button disabled={isCreating}>
+          {isCreating ? "Adding..." : "Add cabin"}
+        </Button>
       </FormRow2>
     </Form>
   );
