@@ -169,7 +169,13 @@ function CreateCabinForm({ cabinToEdit = {} }) {
           Cancel
         </Button>
         <Button disabled={isWorking}>
-          {editSession ? "Edit cabin" : "Create new cabin"}
+          {editSession
+            ? isWorking
+              ? "Editing cabin"
+              : "Edit cabin"
+            : isWorking
+            ? "Creating..."
+            : "Create new cabin"}
         </Button>
       </FormRow2>
     </Form>
