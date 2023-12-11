@@ -66,6 +66,8 @@ function Modal({ children }) {
     </ModalContext.Provider>
   );
 }
+
+//3
 function Open({ children, opens: opensWindowName }) {
   const { open } = useContext(ModalContext);
 
@@ -88,6 +90,8 @@ function Window({ children, name }) {
     document.body
   );
 }
+
+//4
 Modal.Window = Window;
 Modal.Open = Open;
 export default Modal;
