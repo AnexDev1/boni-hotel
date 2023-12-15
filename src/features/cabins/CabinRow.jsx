@@ -7,6 +7,9 @@ import { useCreateCabin } from "./useCreateCabin";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import Table from "../../ui/Table";
+import { HiClipboardDocumentCheck } from "react-icons/hi2";
+import { HiMiniPencilSquare } from "react-icons/hi2";
+import { HiOutlineTrash } from "react-icons/hi2";
 
 const Img = styled.img`
   display: block;
@@ -70,17 +73,21 @@ function CabinRow({ cabin }) {
         )}
         <div>
           <button onClick={handleDuplicate} disabled={isCreating}>
-            duplicate
+            <HiClipboardDocumentCheck />
           </button>
           <Modal>
             <Modal.Open opens="edit">
-              <button>Edit</button>
+              <button>
+                <HiMiniPencilSquare />
+              </button>
             </Modal.Open>
             <Modal.Window name="edit">
               <CreateCabinForm cabinToEdit={cabin} />
             </Modal.Window>
             <Modal.Open opens="delete">
-              <button>Delete</button>
+              <button>
+                <HiOutlineTrash />
+              </button>
             </Modal.Open>
             <Modal.Window name="delete">
               <ConfirmDelete
