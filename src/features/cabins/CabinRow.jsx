@@ -1,12 +1,5 @@
 import styled from "styled-components";
-import {
-  HiMiniPencilSquare,
-  HiPencil,
-  HiSquare2Stack,
-  HiTrash,
-} from "react-icons/hi2";
-import { HiClipboardDocumentCheck } from "react-icons/hi2";
-import { HiOutlineTrash } from "react-icons/hi2";
+import { HiPencil, HiSquare2Stack, HiTrash } from "react-icons/hi2";
 
 import { formatCurrency } from "../../utils/helpers";
 import CreateCabinForm from "./CreateCabinForm";
@@ -45,7 +38,7 @@ const Discount = styled.div`
 `;
 function CabinRow({ cabin }) {
   const { isDeleting, deleteCabin } = useDeleteCabin();
-  const { isCreating, createCabin } = useCreateCabin();
+  const { createCabin } = useCreateCabin();
   const {
     id: cabinId,
     name,
