@@ -11,7 +11,15 @@ function LoginForm() {
   const { login, isLoading } = useLogin();
   function handleSubmit(e) {
     e.preventDefault();
-    login({ email, password });
+    login(
+      { email, password },
+      {
+        onSettled: () => {
+          setEmail("");
+          setPassword("");
+        },
+      }
+    );
   }
 
   return (
