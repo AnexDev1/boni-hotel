@@ -1,21 +1,23 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { HiArrowUpOnSquare } from "react-icons/hi2";
+
 import BookingDataBox from "./BookingDataBox";
+import { useBooking } from "./useBooking";
+import { useDeleteBooking } from "./useDeleteBooking";
+
+import { useCheckout } from "../check-in-out/useCheckout";
+import { useMoveBack } from "../../hooks/useMoveBack";
+
 import Row from "../../ui/Row";
 import Heading from "../../ui/Heading";
 import Tag from "../../ui/Tag";
 import ButtonGroup from "../../ui/ButtonGroup";
 import Button from "../../ui/Button";
 import ButtonText from "../../ui/ButtonText";
-
-import { useMoveBack } from "../../hooks/useMoveBack";
-import { useBooking } from "./useBooking";
 import Spinner from "../../ui/Spinner";
-import { HiArrowUpOnSquare } from "react-icons/hi2";
-import { useCheckout } from "../check-in-out/useCheckout";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
-import { useDeleteBooking } from "./useDeleteBooking";
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -77,7 +79,7 @@ function BookingDetail() {
               disabled={isDeleting}
               onConfirm={() =>
                 deleteBooking(bookingId, {
-                  onSettled: navigate(-1),
+                  onSettled: moveBack,
                 })
               }
             />
